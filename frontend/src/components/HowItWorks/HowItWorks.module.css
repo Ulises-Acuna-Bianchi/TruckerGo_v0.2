@@ -1,0 +1,196 @@
+.section {
+  padding: 40px 20px;
+  color: #eef4f6;
+  background-color: #17212b;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  color: #eef4f6;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.heading h2 span {
+  display: block;
+}
+
+.steps {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  gap: 28px;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  gap: 16px;
+}
+
+.step:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: 36px;
+  left: 17.5px;
+  width: 1px;
+  height: 75px;
+  background-color: #3e6478;
+  content: '';
+}
+
+.number {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #17212b;
+  background-color: var(--color-primary);
+  font-size: 0.8125rem;
+  line-height: 1;
+  font-weight: 800;
+}
+
+.stepContent {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.audience {
+  color: #b8cbd5;
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stepContent h3 {
+  color: #eef4f6;
+  font-size: 1.0625rem;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.description {
+  color: #cad7de;
+  font-size: 0.875rem;
+  line-height: 1.57;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 56px 24px;
+  }
+
+  .heading h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .steps {
+    gap: 32px;
+  }
+
+  .step {
+    gap: 20px;
+  }
+
+  .step:not(:last-child)::after {
+    height: 60px;
+  }
+
+  .stepContent h3 {
+    font-size: 1.125rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding: 72px var(--page-padding);
+  }
+
+  .content {
+    gap: 48px;
+  }
+
+  .heading h2 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .heading h2 span {
+    display: inline;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .step:not(:last-child)::after {
+    top: 21.5px;
+    left: 44px;
+    width: calc(100% + 4px);
+    height: 1px;
+  }
+
+  .number {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+    font-size: 0.875rem;
+  }
+
+  .stepContent {
+    gap: 5px;
+  }
+
+  .stepContent h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+}

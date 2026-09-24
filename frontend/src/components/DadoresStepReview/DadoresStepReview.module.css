@@ -1,0 +1,239 @@
+.review {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  gap: 28px;
+  margin: 0 auto;
+}
+
+.previewColumn,
+.summaryColumn {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.previewColumn h2,
+.summaryColumn h2 {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.previewCard {
+  overflow: hidden;
+  border: 1px solid #d5e1e7;
+  border-radius: 12px;
+  background: var(--color-white);
+  box-shadow: 0 2px 8px #17212b24;
+}
+
+.imagePlaceholder {
+  display: grid;
+  min-height: 132px;
+  place-items: center;
+  color: #fff;
+  background: #8b5cf6;
+}
+
+.previewPhoto { width: 100%; height: 100%; min-height: 132px; max-height: 280px; object-fit: cover; }
+
+.previewBody {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.previewEyebrow {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+}
+
+.previewBody h3 {
+  color: var(--color-text);
+  font-size: 1.125rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.cargoName {
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.payment {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid #d5e1e7;
+  border-bottom: 1px solid #d5e1e7;
+  padding: 12px 0;
+}
+
+.payment strong {
+  color: var(--color-text);
+  font-size: 1.625rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.payment span,
+.distanceInfo span {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+}
+
+.distanceInfo {
+  display: grid;
+  gap: 4px;
+  font-size: 0.8125rem;
+}
+
+.distanceInfo strong + span {
+  margin-bottom: 6px;
+}
+
+.summaryGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.summaryCard {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  border: 1px solid #d5e1e7;
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--color-white);
+}
+
+.cardHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cardHeading h3 {
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  font-weight: 800;
+}
+
+.cardHeading button {
+  border: 0;
+  padding: 0;
+  color: var(--color-primary-text);
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.summaryCard p {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.summaryCard p strong {
+  color: var(--color-text);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.backButton,
+.publishButton {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 800;
+}
+
+.backButton {
+  color: var(--color-primary-text);
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.publishGroup {
+  display: grid;
+  gap: 6px;
+}
+
+.publishButton {
+  color: var(--color-text);
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+.publishButton:disabled { cursor: not-allowed; opacity: 0.65; }
+
+.publishGroup p {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  text-align: right;
+}
+
+.backButton:focus-visible,
+.cardHeading button:focus-visible {
+  outline: 3px solid #ff6b1a55;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contactCard {
+    grid-column: 1 / -1;
+  }
+
+  .actions {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .publishGroup {
+    min-width: 240px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .review {
+    grid-template-columns: minmax(250px, 380px) minmax(0, 1fr);
+    align-items: start;
+    gap: 32px;
+  }
+
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .backButton,
+  .publishButton {
+    width: 100%;
+  }
+}

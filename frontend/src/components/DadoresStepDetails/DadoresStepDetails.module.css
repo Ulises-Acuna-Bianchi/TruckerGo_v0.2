@@ -1,0 +1,200 @@
+.form {
+  display: grid;
+  width: 100%;
+  max-width: 880px;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.routeSummary,
+.panel {
+  border: 1px solid #d5e1e7;
+  border-radius: 12px;
+  padding: 20px;
+  background: var(--color-white);
+}
+
+.routeSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.summaryText {
+  display: grid;
+  gap: 4px;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 12px;
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.summaryText span {
+  color: var(--color-text-secondary);
+}
+
+.editBasics {
+  width: fit-content;
+  border: 0;
+  padding: 4px 0;
+  color: var(--color-primary-text);
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.panel {
+  display: grid;
+  gap: 20px;
+}
+
+.panel h3 {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.fields {
+  display: grid;
+  min-width: 0;
+  gap: 18px;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.photoRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid #d5e1e7;
+  padding-top: 18px;
+}
+
+.photoRow strong {
+  color: var(--color-text);
+  font-size: 0.875rem;
+}
+
+.photoRow strong span,
+.photoRow p {
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.photoRow p,
+.hint {
+  margin-top: 4px;
+  font-size: 0.8125rem;
+}
+
+.photoButton {
+  position: relative;
+  display: inline-flex;
+  min-height: 44px;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d5e1e7;
+  border-radius: 8px;
+  padding: 0 12px;
+  color: var(--color-text-secondary);
+  background: #eef4f6;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.photoInput { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.photoButton:focus-within { outline: 3px solid #ff6b1a55; outline-offset: 3px; }
+.photoPreview { display: grid; width: min(100%, 340px); aspect-ratio: 1.5; overflow: hidden; place-items: center; border-radius: 8px; color: white; background: #8b5cf6; }
+.photoPreview img { width: 100%; height: 100%; object-fit: cover; }
+.removePhoto { width: fit-content; border: 0; padding: 0; color: var(--color-primary-text); background: transparent; font: inherit; font-weight: 700; cursor: pointer; }
+.photoError { color: #a82020; font-weight: 700; }
+
+.hint {
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+.backButton,
+.continueButton {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.backButton {
+  color: var(--color-primary-text);
+  background: var(--color-white);
+}
+
+.continueButton {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+
+.backButton:focus-visible,
+.continueButton:focus-visible,
+.editBasics:focus-visible {
+  outline: 3px solid #ff6b1a55;
+  outline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .routeSummary,
+  .panel {
+    padding: 28px;
+  }
+
+  .routeSummary {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .summaryText {
+    min-width: 220px;
+  }
+
+  .fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 420px) {
+  .photoRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .backButton,
+  .continueButton {
+    width: 100%;
+  }
+}

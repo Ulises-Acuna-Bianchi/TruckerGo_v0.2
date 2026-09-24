@@ -1,0 +1,252 @@
+.section {
+  padding: 40px var(--page-padding);
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eyebrow,
+.videoLabel,
+.comparisonHeader,
+.mobileCardLabel,
+.mobileProposalLabel {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.videoLabel {
+  color: var(--color-primary-text);
+}
+
+.title {
+  font-size: 1.75rem;
+  line-height: 1.22;
+  font-weight: 800;
+}
+
+.description {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.videos {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.videoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.videoPlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 201px;
+  border-radius: 12px;
+  background-color: #8b5cf6;
+}
+
+.comparison {
+  margin-top: 28px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.comparisonHeader {
+  display: none;
+}
+
+.comparisonRow {
+  border-bottom: 1px solid #d5e1e7;
+}
+
+.comparisonRow:last-child {
+  border-bottom: 0;
+}
+
+.problemCard,
+.proposalCard {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.problemCard {
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.proposalCard {
+  color: var(--color-background);
+  background-color: var(--color-text);
+}
+
+.number {
+  flex: 0 0 auto;
+  color: var(--color-primary);
+  font-size: 1.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.proposalIcon {
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  color: var(--color-primary);
+}
+
+.proposalIcon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cardContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cardContent h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.cardContent > p:last-child {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.proposalCard .cardContent > p:last-child {
+  color: #cad7de;
+}
+
+.mobileCardLabel,
+.mobileProposalLabel {
+  font-size: 0.6875rem;
+  line-height: 1.45;
+}
+
+.mobileCardLabel {
+  color: var(--color-text-secondary);
+}
+
+.mobileProposalLabel {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .videos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .videoPlaceholder {
+    min-height: 0;
+  }
+
+  .comparison {
+    margin-top: 32px;
+    background-color: var(--color-white);
+  }
+
+  .comparisonHeader,
+  .comparisonRow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comparisonHeader p {
+    display: flex;
+    min-height: 56px;
+    align-items: center;
+    padding: 0 24px;
+  }
+
+  .comparisonHeader p:first-child {
+    color: var(--color-text-secondary);
+    background-color: var(--color-white);
+  }
+
+  .comparisonHeader p:last-child {
+    color: var(--color-primary);
+    background-color: var(--color-text);
+  }
+
+  .problemCard,
+  .proposalCard {
+    min-height: 188px;
+    padding: 24px;
+  }
+
+  .proposalIcon {
+    flex-basis: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .mobileCardLabel,
+  .mobileProposalLabel {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .videos {
+    gap: 24px;
+  }
+
+  .problemCard,
+  .proposalCard {
+    min-height: 164px;
+  }
+}

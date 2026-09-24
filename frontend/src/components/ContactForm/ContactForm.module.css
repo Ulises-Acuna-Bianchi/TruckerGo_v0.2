@@ -1,0 +1,79 @@
+.card {
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  border: 1px solid #d5e1e7;
+  border-radius: 14px;
+  padding: 20px;
+  color: var(--color-text);
+  background: var(--color-white);
+  box-shadow: 0 14px 36px #11182724;
+}
+
+.title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.note {
+  margin-top: 6px;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.optionalFields {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+}
+
+.submit {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: var(--color-text);
+  background: var(--color-primary);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #ff7c34;
+}
+
+.submit:focus-visible {
+  outline: 3px solid #ff6b1a66;
+  outline-offset: 3px;
+}
+
+@media (min-width: 540px) {
+  .card {
+    padding: 24px;
+  }
+
+  .optionalFields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    max-width: 400px;
+    padding: 24px;
+  }
+}

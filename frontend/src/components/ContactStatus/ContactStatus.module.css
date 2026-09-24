@@ -1,0 +1,75 @@
+.status {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  min-height: 240px;
+  gap: 10px;
+  border: 1px solid #d5e1e7;
+  border-radius: 14px;
+  padding: 24px;
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+.status svg {
+  color: var(--color-primary);
+}
+
+.status h2 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.status > p {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.sendingLabel {
+  display: grid;
+  width: 100%;
+  min-height: 58px;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  background: #dbe7ec;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+.preserved {
+  margin-top: 2px;
+}
+
+.error button {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 4px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--color-text);
+  background: var(--color-primary);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.error button:focus-visible {
+  outline: 3px solid #ff6b1a66;
+  outline-offset: 3px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 3s;
+  }
+}

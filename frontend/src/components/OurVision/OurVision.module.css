@@ -1,0 +1,150 @@
+.section {
+  padding: 40px 20px;
+  color: #eef4f6;
+  background-color: #17212b;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+.composition {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoPlaceholder {
+  width: 100%;
+  height: 197px;
+  flex: 0 0 197px;
+  border-radius: 12px;
+  background-color: #8b5cf6;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.videoPlaceholder + .copy {
+  margin-top: 28px;
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.copy h2 {
+  margin-top: 12px;
+  color: #eef4f6;
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.copy h2 span {
+  display: block;
+}
+
+.description {
+  margin-top: 16px;
+  color: #cad7de;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.closing {
+  margin-top: 12px;
+  color: #eef4f6;
+  font-size: 1rem;
+  line-height: 1.625;
+  font-weight: 500;
+}
+
+.decorativeLine {
+  width: 40px;
+  height: 3px;
+  margin-top: 24px;
+  background-color: var(--color-primary);
+}
+
+.mobileBottomSpace {
+  height: 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 56px 24px;
+  }
+
+  .videoPlaceholder {
+    height: 405px;
+    flex-basis: 405px;
+  }
+
+  .copy h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding: 72px var(--page-padding);
+  }
+
+  .composition {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .videoPlaceholder {
+    width: 100%;
+    height: 326px;
+    flex-basis: auto;
+  }
+
+  .copy {
+    gap: 0;
+  }
+
+  .videoPlaceholder + .copy {
+    margin-top: 0;
+  }
+
+  .copy h2 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .copy h2 span {
+    display: block;
+  }
+
+  .description {
+    margin-top: 16px;
+    font-size: 1.125rem;
+    line-height: 1.55;
+  }
+
+  .closing {
+    margin-top: 16px;
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+  .decorativeLine {
+    margin-top: 8px;
+  }
+
+  .mobileBottomSpace {
+    height: 28px;
+  }
+}

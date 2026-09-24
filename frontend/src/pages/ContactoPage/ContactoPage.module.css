@@ -1,0 +1,45 @@
+.main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #eef4f6;
+  background: #302a52;
+}
+
+.main::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 20%, #8b5cf633, transparent 42%),
+    radial-gradient(ellipse at 78% 70%, #5268df22, transparent 38%);
+  content: '';
+}
+
+.layout {
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 32px var(--page-padding) 40px;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    gap: 32px;
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .layout {
+    min-height: 680px;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    align-items: center;
+    gap: 72px;
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}

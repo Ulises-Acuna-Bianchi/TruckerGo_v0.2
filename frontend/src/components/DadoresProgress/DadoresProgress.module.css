@@ -1,0 +1,31 @@
+.progress {
+  display: grid;
+  gap: 10px;
+  margin: 0 auto 20px;
+}
+
+.label {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.segment {
+  height: 4px;
+  border-radius: 99px;
+  background: #d5e1e7;
+}
+
+.completed,
+.current {
+  background: var(--color-primary);
+}

@@ -1,0 +1,82 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 16px;
+  background-color: var(--color-background);
+}
+
+.section > h2,
+.section > .description,
+.section > .grid,
+.section > .note {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section > h2 {
+  font-size: 1.8125rem;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.description {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.note {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .section {
+    gap: 24px;
+    padding: 56px 24px;
+  }
+
+  .section > h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .note {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding: 72px var(--page-padding);
+  }
+
+  .section > h2 {
+    font-size: 2.5rem;
+    line-height: 1.08;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+}

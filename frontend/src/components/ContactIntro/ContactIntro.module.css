@@ -1,0 +1,132 @@
+.intro {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  overflow: hidden;
+  color: #eef4f6;
+}
+
+.intro::before {
+  position: absolute;
+  z-index: -1;
+  inset: -25%;
+  background:
+    radial-gradient(ellipse at 30% 25%, #8b5cf655, transparent 42%),
+    radial-gradient(ellipse at 75% 80%, #5268df33, transparent 38%);
+  content: '';
+  animation: contact-background-drift 18s ease-in-out infinite alternate;
+}
+
+.paused::before {
+  animation-play-state: paused;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.eyebrow {
+  color: #ff6b1a;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.content h1 {
+  margin-top: 14px;
+  font-size: clamp(2rem, 7vw, 3.75rem);
+  line-height: 1.08;
+  font-weight: 800;
+}
+
+.description {
+  max-width: 540px;
+  margin-top: 16px;
+  color: #cad7de;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.secondary {
+  display: none;
+  max-width: 440px;
+  margin-top: 24px;
+  border-top: 1px solid #cad7de55;
+  padding-top: 16px;
+  color: #eef4f6;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.homeLink,
+.pauseButton {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cad7de66;
+  border-radius: 7px;
+  padding: 0 12px;
+  color: #eef4f6;
+  background: #17212b44;
+  font: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pauseButton {
+  cursor: pointer;
+}
+
+.homeLink:hover,
+.pauseButton:hover {
+  background: #ffffff16;
+}
+
+.homeLink:focus-visible,
+.pauseButton:focus-visible {
+  outline: 2px solid #ff6b1a;
+  outline-offset: 3px;
+}
+
+@keyframes contact-background-drift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to { transform: translate3d(2%, 1%, 0) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro::before {
+    animation: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    max-width: 560px;
+  }
+
+  .description {
+    font-size: 1.0625rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .secondary {
+    display: block;
+  }
+}
