@@ -22,7 +22,6 @@ function RouteDiagram({ segment, origin, destination, distanceKm }: RouteDiagram
       </svg>
       <span className={styles.start}>{start}</span>
       <span className={styles.end}>{end}</span>
-      {isPickup && <span className={styles.conceptual}>Ubicación conceptual, sin GPS</span>}
     </section>
   )
 }

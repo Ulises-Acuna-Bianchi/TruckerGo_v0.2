@@ -82,7 +82,7 @@ function CargaRoutePage() {
                   <button className={styles.externalMap} type="button" disabled>Abrir en Google Maps</button>
                 )}
                 {segment === 'pickup' ? (
-                  <p className={styles.mapNote}>No se puede abrir este tramo: falta la ubicación de partida del transportista. La demo no solicita GPS.</p>
+                  <p className={styles.mapNote}>No se puede abrir este tramo: falta la ubicación de partida del transportista. La demo no solicita GPS.{!carga.originAddress && ' Sólo conocemos la ciudad de retiro, por lo que esa ubicación es aproximada.'}</p>
                 ) : !mapsUrl ? (
                   <p className={styles.mapNote}>No se puede abrir este tramo: faltan el origen o el destino.</p>
                 ) : (!carga.originAddress || !carga.destinationAddress) ? (
