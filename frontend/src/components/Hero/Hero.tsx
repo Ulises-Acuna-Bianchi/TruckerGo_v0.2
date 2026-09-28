@@ -1,9 +1,20 @@
-import { preventPendingNavigation } from '../../pendingLinks'
+import { Link } from 'react-router'
+import heroVideo from '../../assets/hero.mp4'
 import styles from './Hero.module.css'
 
 function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
+      <video
+        className={styles.video}
+        src={heroVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      />
       <div className={styles.container}>
         <div className={styles.content}>
           <p className={styles.brand}>TruckerGO</p>
@@ -18,9 +29,9 @@ function Hero() {
             encontrar y gestionar operaciones desde una sola plataforma.
           </p>
 
-          <a className={styles.primaryButton} href="#pendiente-demo" onClick={preventPendingNavigation}>
+          <Link className={styles.primaryButton} to="/contacto?motivo=demo">
             Solicitar una demo
-          </a>
+          </Link>
           <a className={styles.textLink} href="#howitworks">
             Ver cómo funciona <span aria-hidden="true">→</span>
           </a>

@@ -4,6 +4,8 @@ import {
   Truck,
   type LucideIcon,
 } from 'lucide-react'
+import problemVideo from '../../assets/problema.mp4'
+import solutionVideo from '../../assets/solucion.mp4'
 import styles from './ProblemSection.module.css'
 
 type Comparison = {
@@ -70,20 +72,34 @@ function ProblemSection() {
         <div className={styles.videos}>
           <article className={styles.videoBlock}>
             <h3 className={styles.videoLabel}>El problema</h3>
-            <div
-              className={styles.videoPlaceholder}
-              role="img"
+            <video
+              className={styles.video}
+              src={problemVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
               aria-label="Video sobre el problema actual del transporte de cargas"
-            />
+            >
+              Tu navegador no puede reproducir este video. <a href={problemVideo}>Abrir video del problema</a>.
+            </video>
           </article>
 
           <article className={styles.videoBlock}>
             <h3 className={styles.videoLabel}>Nuestra propuesta</h3>
-            <div
-              className={styles.videoPlaceholder}
-              role="img"
+            <video
+              className={styles.video}
+              src={solutionVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
               aria-label="Video sobre la propuesta de TruckerGO"
-            />
+            >
+              Tu navegador no puede reproducir este video. <a href={solutionVideo}>Abrir video de la solución</a>.
+            </video>
           </article>
         </div>
 

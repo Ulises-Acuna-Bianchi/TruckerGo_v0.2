@@ -1,3 +1,8 @@
+import palletsBebidasPhoto from '../assets/cargas/pallets-bebidas.jpg'
+import maquinariaAgricolaPhoto from '../assets/cargas/maquinaria-agricola.jpg'
+import ladrillosPhoto from '../assets/cargas/ladrillos.jpg'
+import productosRefrigeradosPhoto from '../assets/cargas/productos-refrigerados.jpg'
+
 export type Carga = {
   id: string
   origin: string
@@ -31,6 +36,7 @@ export const cargas: Carga[] = [
     origin: 'Zárate',
     destination: 'Rosario',
     cargoName: '12 pallets de bebidas',
+    photos: [palletsBebidasPhoto],
     company: 'Empresa de ejemplo A',
     paymentAmount: 380_000,
     paymentBasis: 'Por viaje completo',
@@ -49,6 +55,7 @@ export const cargas: Carga[] = [
     origin: 'Campana',
     destination: 'Pergamino',
     cargoName: 'Maquinaria agrícola',
+    photos: [maquinariaAgricolaPhoto],
     company: 'Empresa de ejemplo B',
     paymentAmount: 450_000,
     paymentBasis: 'Por viaje completo',
@@ -65,6 +72,7 @@ export const cargas: Carga[] = [
     origin: 'Escobar',
     destination: 'La Plata',
     cargoName: '20 pallets de ladrillos',
+    photos: [ladrillosPhoto],
     company: 'Empresa de ejemplo C',
     paymentAmount: 290_000,
     paymentBasis: 'Por viaje completo',
@@ -82,6 +90,7 @@ export const cargas: Carga[] = [
     origin: 'Pilar',
     destination: 'Mar del Plata',
     cargoName: '16 pallets de productos refrigerados',
+    photos: [productosRefrigeradosPhoto],
     company: 'Empresa de ejemplo D',
     paymentAmount: 720_000,
     paymentBasis: 'Por viaje completo',

@@ -51,16 +51,19 @@
 
 .videoBlock {
   display: flex;
+  min-width: 0;
   flex-direction: column;
   gap: 8px;
 }
 
-.videoPlaceholder {
+.video {
   width: 100%;
   aspect-ratio: 16 / 9;
-  min-height: 201px;
+  height: auto;
   border-radius: 12px;
-  background-color: #8b5cf6;
+  background-color: var(--color-text);
+  object-fit: contain;
+  object-position: center center;
 }
 
 .comparison {
@@ -179,10 +182,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     margin-top: 32px;
-  }
-
-  .videoPlaceholder {
-    min-height: 0;
   }
 
   .comparison {

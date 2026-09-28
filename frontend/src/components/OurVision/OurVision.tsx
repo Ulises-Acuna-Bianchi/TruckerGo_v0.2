@@ -1,3 +1,4 @@
+import visionVideo from '../../assets/vision.mp4'
 import styles from './OurVision.module.css'
 
 function VisionCopy() {
@@ -21,11 +22,18 @@ function OurVision() {
     <section id="ourvision" className={styles.section} aria-labelledby="ourvision-title">
       <div className={styles.container}>
         <div className={styles.composition}>
-          <div
-            className={styles.videoPlaceholder}
-            role="img"
-            aria-label="Camiones cargando"
-          />
+          <video
+            className={styles.video}
+            src={visionVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Video sobre la visión de TruckerGO"
+          >
+            Tu navegador no puede reproducir este video. <a href={visionVideo}>Abrir video de nuestra visión</a>.
+          </video>
           <VisionCopy />
         </div>
         <div className={styles.mobileBottomSpace} aria-hidden="true" />
