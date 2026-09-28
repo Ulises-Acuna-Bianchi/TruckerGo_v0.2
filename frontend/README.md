@@ -1,3 +1,20 @@
+# TruckerGO frontend
+
+## Mapa de Google en Recorrido
+
+La pantalla `/cargas/:id/recorrido` usa **Maps Embed API** para mostrar un punto o una ruta. Sin clave, conserva el gráfico conceptual.
+
+1. En un proyecto de Google Cloud dedicado a TruckerGO, habilitá únicamente **Maps Embed API** y la facturación requerida por Google.
+2. Creá una clave de API exclusiva para Embed. Restringila a **Maps Embed API** y a los sitios autorizados: el origen local de desarrollo (por ejemplo, `http://localhost:5173/*`) y el dominio HTTPS de producción. Usá claves separadas para desarrollo y producción si ambos entornos tienen distinto acceso.
+3. En desarrollo, copiá `.env.example` a `.env.local` y completá `VITE_GOOGLE_MAPS_EMBED_KEY`. El archivo `.env.local` está ignorado por Git.
+4. En el hosting, configurá `VITE_GOOGLE_MAPS_EMBED_KEY` como variable del proceso de **build** y volvé a compilar al cambiarla. Agregá el dominio publicado a las restricciones de la clave.
+
+La clave aparece en la URL del `iframe` y es visible para quien abra la página. La protección depende de las restricciones configuradas en Google Cloud; no uses una clave sin restricciones ni una credencial privada. La pantalla no solicita GPS. Para el tramo hasta el retiro, el transportista escribe su punto de partida; el dato queda sólo en el estado de la página. Las cargas y sus fotos continúan únicamente en la memoria compartida de React.
+
+[Configuración de Maps Embed](https://developers.google.com/maps/documentation/embed/quickstart) · [Restricciones recomendadas](https://developers.google.com/maps/api-security-best-practices#websites-with-the-maps-embed-api)
+
+---
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

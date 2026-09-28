@@ -11,6 +11,13 @@
 .segmentSwitch { display: grid; grid-template-columns: 1fr 1fr; width: min(100%, 400px); margin-bottom: 16px; overflow: hidden; border: 1px solid #d5e1e7; border-radius: 7px; background: #fff; }
 .segmentSwitch button { min-height: 48px; border: 0; padding: 8px; color: #3e6478; background: transparent; font: inherit; font-size: .875rem; font-weight: 700; cursor: pointer; }
 .segmentSwitch button.selected { color: #17212b; background: #ff6b1a; }
+.departureForm { width: min(100%, 720px); margin: 0 0 18px; }
+.departureForm label { display: block; margin-bottom: 8px; font-size: .875rem; font-weight: 800; }
+.departureForm label span { display: block; margin-top: 2px; color: #3e6478; font-size: .75rem; font-weight: 500; }
+.departureControls { display: flex; flex-wrap: wrap; gap: 8px; }
+.departureControls input { flex: 1 1 220px; min-width: 0; min-height: 44px; border: 1px solid #b8cdd7; border-radius: 7px; padding: 8px 12px; color: #17212b; background: #fff; font: inherit; }
+.departureControls button { min-height: 44px; border: 0; border-radius: 7px; padding: 8px 14px; color: #17212b; background: #ff6b1a; font: inherit; font-size: .875rem; font-weight: 800; cursor: pointer; }
+.departureControls .clearDeparture { border: 1px solid #b8cdd7; background: #fff; }
 .layout { display: grid; gap: 12px; }
 .routePanel { min-width: 0; border: 1px solid #d5e1e7; border-radius: 10px; padding: 20px; background: #fff; overflow-wrap: anywhere; }
 .eyebrow { margin: 0 0 9px; color: #b94300; font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
@@ -29,6 +36,6 @@
 .notFound { width: min(100%, 560px); margin: 64px auto; }
 .notFound p { color: #3e6478; }
 .notFound a { display: inline-block; margin-top: 12px; color: #b94300; font-weight: 800; }
-.header a:focus-visible, .segmentSwitch button:focus-visible, .externalMap:focus-visible, .notFound a:focus-visible { outline: 3px solid #ff6b1a; outline-offset: 3px; }
+.header a:focus-visible, .segmentSwitch button:focus-visible, .departureControls input:focus-visible, .departureControls button:focus-visible, .externalMap:focus-visible, .notFound a:focus-visible { outline: 3px solid #ff6b1a; outline-offset: 3px; }
 @media (min-width: 768px) { .headerContent { min-height: 64px; padding: 0 24px; } .main { padding-top: 38px; } .layout { gap: 16px; } .routePanel { padding: 24px; } }
 @media (min-width: 1024px) { .headerContent { min-height: 80px; padding: 0 32px; } .main { min-height: calc(100vh - 80px); padding-top: 44px; } .layout { grid-template-columns: 380px minmax(0, 1fr); align-items: stretch; gap: 20px; } .layout > :first-child { grid-column: 2; grid-row: 1; } .routePanel { grid-column: 1; grid-row: 1; align-self: start; } }
