@@ -6,6 +6,9 @@ import {
 } from 'lucide-react'
 import problemVideo from '../../assets/problema.mp4'
 import solutionVideo from '../../assets/solucion.mp4'
+import problemPoster from '../../assets/posters/problema.jpg'
+import solutionPoster from '../../assets/posters/solucion.jpg'
+import LazyVideo from '../LazyVideo/LazyVideo'
 import styles from './ProblemSection.module.css'
 
 type Comparison = {
@@ -72,34 +75,26 @@ function ProblemSection() {
         <div className={styles.videos}>
           <article className={styles.videoBlock}>
             <h3 className={styles.videoLabel}>El problema</h3>
-            <video
+            <LazyVideo
               className={styles.video}
               src={problemVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
+              poster={problemPoster}
               aria-label="Video sobre el problema actual del transporte de cargas"
             >
               Tu navegador no puede reproducir este video. <a href={problemVideo}>Abrir video del problema</a>.
-            </video>
+            </LazyVideo>
           </article>
 
           <article className={styles.videoBlock}>
             <h3 className={styles.videoLabel}>Nuestra propuesta</h3>
-            <video
+            <LazyVideo
               className={styles.video}
               src={solutionVideo}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
+              poster={solutionPoster}
               aria-label="Video sobre la propuesta de TruckerGO"
             >
               Tu navegador no puede reproducir este video. <a href={solutionVideo}>Abrir video de la solución</a>.
-            </video>
+            </LazyVideo>
           </article>
         </div>
 

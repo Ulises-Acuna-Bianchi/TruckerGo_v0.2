@@ -1,18 +1,16 @@
 import { Link } from 'react-router'
 import heroVideo from '../../assets/hero.mp4'
+import heroPoster from '../../assets/posters/hero.jpg'
+import LazyVideo from '../LazyVideo/LazyVideo'
 import styles from './Hero.module.css'
 
 function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="hero-title">
-      <video
+      <LazyVideo
         className={styles.video}
         src={heroVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+        poster={heroPoster}
         aria-hidden="true"
       />
       <div className={styles.container}>

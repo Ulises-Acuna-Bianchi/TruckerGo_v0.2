@@ -1,4 +1,6 @@
 import visionVideo from '../../assets/vision.mp4'
+import visionPoster from '../../assets/posters/vision.jpg'
+import LazyVideo from '../LazyVideo/LazyVideo'
 import styles from './OurVision.module.css'
 
 function VisionCopy() {
@@ -22,18 +24,14 @@ function OurVision() {
     <section id="ourvision" className={styles.section} aria-labelledby="ourvision-title">
       <div className={styles.container}>
         <div className={styles.composition}>
-          <video
+          <LazyVideo
             className={styles.video}
             src={visionVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
+            poster={visionPoster}
             aria-label="Video sobre la visión de TruckerGO"
           >
             Tu navegador no puede reproducir este video. <a href={visionVideo}>Abrir video de nuestra visión</a>.
-          </video>
+          </LazyVideo>
           <VisionCopy />
         </div>
         <div className={styles.mobileBottomSpace} aria-hidden="true" />
