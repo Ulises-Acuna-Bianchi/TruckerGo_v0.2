@@ -12,7 +12,7 @@ import CargasProvider from './context/CargasProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CargasProvider>
         <App />
       </CargasProvider>
